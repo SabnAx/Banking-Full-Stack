@@ -1,0 +1,29 @@
+<div class="card mt-3">
+  <div class="card-header bg-danger text-white my-2 mt-3">
+    <h5>
+      Résumé du compte {{compte.numero}} à supprimer
+    </h5>
+  </div>
+  <div class="card-body w-50">
+    <table class="table">
+        <tbody>
+          <tr>
+            <td>Numéro</td>
+            <td>{{compte.numero}}</td>
+          </tr>
+          <tr>
+            <td>Propriétaire</td>
+            <td>{{compte.proprietaire}}</td>
+          </tr>
+          <tr>
+              <td>Solde</td>
+              <td>{{compte.solde}}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="button" class="btn btn-dark btn-sm mr-2" (click)='annulerDelete()'>Annuler</button>
+    <button type="button" class="btn btn-outline-danger btn-sm" (click)='confirmerDelete()'>OK</button>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<form class="mt-2 w-25" #f="ngForm" (ngSubmit)="ouvrirCompte()">
+
+        <div class="form-group">
+          <label for="numero">Numéro du Compte</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  ngModel
+                  name="numero"
+                  id="numero"
+                  [(ngModel)]="compte.numero"
+                  required
+                  #numero="ngModel"
+              >
+          <div class="alert alert-danger" *ngIf="numero.touched&&numero.invalid">
+            Le numéro est obligatoire
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="proprio">Titulaire du Compte</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    name="proprio"
+                    id="proprio"
+                    [(ngModel)]="compte.proprietaire"
+                    #prop="ngModel"
+                    required
+                >
+            <div class="alert alert-danger"  *ngIf="prop.touched&&prop.invalid">
+              Entrez un nom
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="solde">Solde Initial</label>
+            <input
+                    type="number"
+                    class="form-control"
+                    name="solde"
+                    id="solde"
+                    [(ngModel)]="compte.solde"
+                    #sol="ngModel"
+                    required
+                                                        >
+            <div class="text text-danger" *ngIf="sol.touched&&sol.invalid&&(sol.value<=0)">
+              Le Solde est obligatoire
+            </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-success" [disabled]="!f.valid">
+            Enregistrer
+          </button>
+        </div>
+
+
+
+
+
+
+
+</form>

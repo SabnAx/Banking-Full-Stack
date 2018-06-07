@@ -1,0 +1,33 @@
+
+  <div class="card">
+    <div class="card-header mt-2 bg-info text-white">
+        <h5 class = " my-2">Liste des comptes</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr class="text-dark">
+            <th>Numéro du compte</th>
+            <th>Propriétaire</th>
+            <th class="text-center">Solde</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let c of data'>
+            <td class="w-25">{{c.numero}}</td>
+            <td class="w-50">{{c.proprietaire}}</td>
+            <td class="text-center">{{c.solde}}</td>
+            <td class="text-center">
+              <a name="" id="" class="btn btn-info btn-sm" href="#" role="button">🔍</a>
+              <a name="" id="" class="btn btn-sm btn-secondary" href="#" role="button">✎</a>
+              <a name="" id="" class="btn btn-danger btn-sm" [routerLink]="['/delete/',c.numero]" role="button">🗑</a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
